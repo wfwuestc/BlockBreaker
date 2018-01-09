@@ -35,7 +35,6 @@ var guaGame = function (images, callback) {
   window.fps = 30
   //timer
   var runLoop = function () {
-    log(window.fps)
     //event
     var actions = Object.keys(g.actions)
     for (var i = 0; i <actions.length; i++){

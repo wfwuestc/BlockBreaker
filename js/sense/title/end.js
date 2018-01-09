@@ -1,15 +1,13 @@
-var SceneEnd = function (game) {
-  var s = {
-    g: game,
+class SceneEnd extends Scenes {
+  constructor(game) {
+    super(game)
+    game.registerAction('r', function () {
+      var s = SceneTitle.new(game)
+      game.replaceScene(s)
+    })
   }
-  // 初始化
-  s.draw = function () {
 
-    //draw labels
-    game.context.fillText('游戏结束' , 10, 290)
+  draw() {
+    this.game.context.fillText('游戏结束 按r返回标题界面' , 10, 290)
   }
-  s.update = function () {
-
-  }
-  return s
 }
