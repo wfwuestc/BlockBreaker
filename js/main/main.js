@@ -39,7 +39,7 @@ var __main = function () {
   }
 
   var game = guaGame.instance(images, function (g) {
-    var s = SceneTitle.new(g)
+    var s = Editor.new(g)
     g.runWithScene(s)
   })
 
