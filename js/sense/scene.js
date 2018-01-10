@@ -41,7 +41,6 @@ var Scene = function (game) {
     if (paddle.collide(ball)){
       ball.bounce()
     }
-    log(blocks)
     for (var i = 0; i < blocks.length; i++){
       var block = blocks[i]
       var isCollide = block.collide(ball)
