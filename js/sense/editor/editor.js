@@ -7,18 +7,18 @@ class Editor extends Scenes {
       [0, 0,],
     ],]
     this.current = 0
-    this.button = document.querySelector('.editor button')
+    this.button = document.querySelector('#addblock')
+    this.addlevel = document.querySelector('#addlevel')
+    this.backgame = document.querySelector('#togame')
     this.x.addEventListener('mousedown', (e) => {
       e.target.addEventListener('mousemove', (e) => {
-        log(e.target.value)
-        this.levels[0][this.current][0] = e.target.value
+        this.levels[0][this.current][0] = Number(e.target.value)
         this.blocks = loadLevel(this.game, 1, this.levels)
       })  
      })
       this.y.addEventListener('mousedown', (e) => {
       e.target.addEventListener('mousemove', (e) => {
-        log(e.target.value)
-        this.levels[0][this.current][1] = e.target.value
+        this.levels[0][this.current][1] = Number(e.target.value)
         this.blocks = loadLevel(this.game, 1, this.levels)
       })  
      })
@@ -31,12 +31,20 @@ class Editor extends Scenes {
     })
     this.blocks = loadLevel(this.game, 1, this.levels)
     // 保存编辑结果
-
-    // 读取关卡
+    this.addlevel.addEventListener('click', e => {
+      e.preventDefault()
+      levels.push(this.levels[0])
+    })
 
     // 将关卡保存在localStorage
 
     // 进入游戏模式
+    this.backgame.addEventListener('click', e => {
+      e.preventDefault()
+      var s = SceneTitle.new(game)
+      game.replaceScene(s)
+
+  })
   }
 
   draw() {

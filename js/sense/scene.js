@@ -44,6 +44,7 @@ var Scene = function (game) {
     for (var i = 0; i < blocks.length; i++){
       var block = blocks[i]
       var isCollide = block.collide(ball)
+      log(isCollide)
       //判断ball和block相撞
       if (isCollide) {
         block.kill()
