@@ -8,7 +8,7 @@ var Scene = function (game) {
 
   var score = 0
 
-  blocks = loadLevel(game, 1)
+  blocks = loadLevel(game, 1, levels)
 
   s.draw = function () {
     // 画背景
