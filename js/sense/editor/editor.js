@@ -14,13 +14,13 @@ class Editor extends Scenes {
       e.target.addEventListener('mousemove', (e) => {
         this.levels[0][this.current][0] = Number(e.target.value)
         this.blocks = loadLevel(this.game, 1, this.levels)
-      })  
+      })
      })
       this.y.addEventListener('mousedown', (e) => {
       e.target.addEventListener('mousemove', (e) => {
         this.levels[0][this.current][1] = Number(e.target.value)
         this.blocks = loadLevel(this.game, 1, this.levels)
-      })  
+      })
      })
     this.button.addEventListener('click',e => {
       e.preventDefault()
@@ -28,6 +28,8 @@ class Editor extends Scenes {
       let origin = [0,0]
       this.levels[0].push(origin)
       this.blocks = loadLevel(this.game, 1, this.levels)
+      this.x.value = 0
+      this.y.value = 0
     })
     this.blocks = loadLevel(this.game, 1, this.levels)
     // 保存编辑结果
@@ -43,8 +45,9 @@ class Editor extends Scenes {
       e.preventDefault()
       var s = SceneTitle.new(game)
       game.replaceScene(s)
+    })
 
-  })
+
   }
 
   draw() {
@@ -54,6 +57,7 @@ class Editor extends Scenes {
         this.game.drawImage(block)
       }
     }
+
   }
   update() {
   }

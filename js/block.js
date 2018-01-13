@@ -22,5 +22,10 @@ var Block = function (game, position) {
   o.collide = function (b) {
     return (rectIntersects(o, b)||rectIntersects(b, o)) && o.alive
   }
+  o.hasPoint = function (x, y) {
+    var xIn = x >= o.x && x <= o.x +o.w
+    var yIn = y >= o.y && y <= o.y +o.h
+    return xIn && yIn
+  }
   return o
 }

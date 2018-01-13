@@ -25,13 +25,18 @@
   <canvas id="id-canvas" width="400" height="300"></canvas>
   <hr>
   <input type="range" value="1" id="input-speed">
+  <hr>
   <form class="editor">
-    <input type="range" name="x-position" id="xx" step="1"  min="0" max="400" onchange="form.elements.xvalue.value=this.value;">
-    <output for="xx" name="xvalue"></output>
-    <input type="range" name="y-position" id="yy" step="1"  min="0" max="300" onchange="form.elements.yvalue.value=this.value;">
-    <output for="yy" name="yvalue"></output>
-    <input type="number" name="life" id="life">
-    <button id="addblock">添加</button>
+    <span>x坐标</span>
+    <input type="range" name="x-position" id="xx" value="0" step="1"  min="0" max="360" onchange="form.elements.xvalue.value=this.value;">
+    <output for="xx" name="xvalue">0</output>
+    <span>y坐标</span>
+    <input type="range" name="y-position" id="yy" value="0" step="1"  min="0" max="150" onchange="form.elements.yvalue.value=this.value;">
+    <output for="yy" name="yvalue">0</output>
+    <br>
+    <button id="addblock">添加砖块</button>
+    <br>
+    <hr>
     <button id="addlevel">提交关卡</button>
     <button id="togame">回到标题页面</button>
   </form>
