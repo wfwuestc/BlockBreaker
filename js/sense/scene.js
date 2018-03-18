@@ -17,9 +17,9 @@ var Scene = function (game) {
     // 画挡板
     game.drawImage(paddle)
     game.drawImage(ball)
-    for (var i = 0; i < blocks.length; i++){
+    for (var i = 0; i < blocks.length; i++) {
       var block = blocks[i]
-      if (block.alive){
+      if (block.alive) {
         game.drawImage(block)
       }
     }
@@ -27,21 +27,21 @@ var Scene = function (game) {
     game.context.fillText('分数：' + score, 10, 290)
   }
   s.update = function () {
-    if (window.pause){
+    if (window.pause) {
       return
     }
     ball.move()
     //判断游戏结束
-    if(ball.y > paddle.y){
+    if (ball.y > paddle.y) {
       // 跳转到游戏结束的场景
       var end = SceneEnd.new(game)
       game.replaceScene(end)
     }
     //判断相撞
-    if (paddle.collide(ball)){
+    if (paddle.collide(ball)) {
       ball.bounce()
     }
-    for (var i = 0; i < blocks.length; i++){
+    for (var i = 0; i < blocks.length; i++) {
       var block = blocks[i]
       var isCollide = block.collide(ball)
       log(isCollide)
@@ -68,7 +68,7 @@ var Scene = function (game) {
   game.canvas.addEventListener('mousedown', function (event) {
     var x = event.offsetX
     var y = event.offsetY
-    log('point',x,y)
+    log('point', x, y)
     if (ball.hasPoint(x, y)) {
       enableDrag = true
     }
@@ -78,7 +78,7 @@ var Scene = function (game) {
     var y = event.offsetY
 
     if (enableDrag) {
-      log('move',x,y)
+      log('move', x, y)
       ball.x = x
       ball.y = y
     }
@@ -86,7 +86,7 @@ var Scene = function (game) {
   game.canvas.addEventListener('mouseup', function (event) {
     var x = event.offsetX
     var y = event.offsetY
-    log(x,y)
+    log(x, y)
     enableDrag = false
   })
   return s

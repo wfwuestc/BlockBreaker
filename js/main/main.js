@@ -1,4 +1,4 @@
-var loadLevel = function(game, n, source) {
+var loadLevel = function (game, n, source) {
   n = n - 1
   var level = source[n]
   var blocks = []
@@ -11,12 +11,12 @@ var loadLevel = function(game, n, source) {
 }
 
 var enableDebugMode = function (game, enable) {
-  if(!enable) {
+  if (!enable) {
     return
   }
-  window.addEventListener('keydown',function (event) {
+  window.addEventListener('keydown', function (event) {
     var k = event.key
-    if (k == 'p'){
+    if (k == 'p') {
       // 暂停功能
       window.pause = !window.pause
     } else if ('12345678'.includes(k)) {

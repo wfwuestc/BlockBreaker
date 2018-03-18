@@ -15,17 +15,17 @@ class Editor extends Scenes {
         this.levels[0][this.current][0] = Number(e.target.value)
         this.blocks = loadLevel(this.game, 1, this.levels)
       })
-     })
-      this.y.addEventListener('mousedown', (e) => {
+    })
+    this.y.addEventListener('mousedown', (e) => {
       e.target.addEventListener('mousemove', (e) => {
         this.levels[0][this.current][1] = Number(e.target.value)
         this.blocks = loadLevel(this.game, 1, this.levels)
       })
-     })
-    this.button.addEventListener('click',e => {
+    })
+    this.button.addEventListener('click', e => {
       e.preventDefault()
       this.current += 1
-      let origin = [0,0]
+      let origin = [0, 0]
       this.levels[0].push(origin)
       this.blocks = loadLevel(this.game, 1, this.levels)
       this.x.value = 0
@@ -51,14 +51,15 @@ class Editor extends Scenes {
   }
 
   draw() {
-    for (var i = 0; i < this.blocks.length; i++){
+    for (var i = 0; i < this.blocks.length; i++) {
       var block = this.blocks[i]
-      if (block.alive){
+      if (block.alive) {
         this.game.drawImage(block)
       }
     }
 
   }
+
   update() {
   }
 }

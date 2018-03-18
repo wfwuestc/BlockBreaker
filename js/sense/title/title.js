@@ -8,6 +8,6 @@ class SceneTitle extends Scenes {
   }
 
   draw() {
-    this.game.context.fillText('按K开始游戏', 180, 150)
+    this.game.context.fillText('按K开始游戏', 160, 150)
   }
 }
