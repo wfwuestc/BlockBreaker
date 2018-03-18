@@ -11,8 +11,13 @@
       width: 400px;
       margin: 0 auto;
     }
+    #id-speed {
+      position: relative;
+      top: -5px;
+    }
     .editor {
       text-align: center;
+      display: none;
     }
     #addblock {
       margin-top: 10px;
@@ -36,15 +41,20 @@
   <div class="wrap">
     <canvas id="id-canvas" width="400" height="300"></canvas>
     <hr>
-    <input type="range" value="1" id="input-speed">
+    <div class="speed">
+      <span id="id-speed">小球速度:</span>
+      <input type="range" value="1" id="input-speed">
+    </div>
     <hr>
     <form class="editor">
-      <span>X坐标</span>
-      <input type="range" name="x-position" id="xx" value="0" step="1"  min="0" max="360" onchange="form.elements.xvalue.value=this.value;">
+      <span>X坐标：</span>
       <output for="xx" name="xvalue">0</output>
-      <span>Y坐标</span>
-      <input type="range" name="y-position" id="yy" value="0" step="1"  min="0" max="150" onchange="form.elements.yvalue.value=this.value;">
+      <input type="range" name="x-position" id="xx" value="0" step="1"  min="0" max="360" onchange="form.elements.xvalue.value=this.value;">
+      <br>
+      <span>Y坐标：</span>
       <output for="yy" name="yvalue">0</output>
+      <input type="range" name="y-position" id="yy" value="0" step="1"  min="0" max="150" onchange="form.elements.yvalue.value=this.value;">
+
       <br>
       <button id="addblock">添加砖块</button>
       <br>

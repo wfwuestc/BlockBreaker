@@ -45,6 +45,8 @@ class Editor extends Scenes {
       e.preventDefault()
       var s = SceneTitle.new(game)
       game.replaceScene(s)
+      var editorForm = document.querySelector('.editor')
+      editorForm.style.display = 'none'
     })
 
 

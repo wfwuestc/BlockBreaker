@@ -8,6 +8,6 @@ class SceneEnd extends Scenes {
   }
 
   draw() {
-    this.game.context.fillText('游戏结束 按r返回标题界面' , 10, 290)
+    this.game.context.fillText('游戏结束 按r返回标题界面' , 160, 150)
   }
 }
